@@ -4,25 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run watch & simplehttpserver",
-    "watch": "watchify src -o bundle.js -d",
-    "build": "browserify src -o bundle.js -d",
+    "start": "budo src/index.js:bundle.js --live -- -t brfs -t glslify",
+    "watch": "watch 'npm run build'",
+    "build": "browserify src -t brfs -t glslify -o bundle.js -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "browserify": {
-    "transform": [
-      "rollupify"
-    ]
-  },
   "license": "MIT",
   "devDependencies": {
+    "brfs": "1.4.3",
     "browserify": "13.1.0",
+    "co": "4.6.0",
+    "glsl-blend-soft-light": "^1.0.5",
+    "glsl-film-grain": "^1.0.2",
+    "glsl-hsl2rgb": "1.1.0",
+    "glsl-noise": "0.0.0",
+    "glslify": "^4.0.0",
     "poem-loop": "1.1.1",
     "rollupify": "0.3.4",
     "simplehttpserver": "0.0.6",
     "soundcloud-badge": "1.1.0",
+    "standard": "8.4.0",
     "three": "0.81.2",
-    "watchify": "3.7.0"
+    "watchify": "3.7.0",
+    "web-audio-analyser": "2.0.1"
   }
 }

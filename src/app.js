@@ -1,6 +1,6 @@
-import {WebGLRenderer, Scene, PerspectiveCamera} from 'three'
+const {WebGLRenderer, Scene, PerspectiveCamera} = require('three')
 
-export default function setupApp() {
+module.exports = function setupApp() {
   const scene = new Scene();
   const camera = new PerspectiveCamera(75, 1, 1, 1000);
   const canvas = setupCanvas()
@@ -26,13 +26,12 @@ function setupCanvas () {
 function setupResizeHandler(canvas, renderer, camera) {
   function size() {
     const ratio = window.devicePixelRatio
-    const width = window.innerWidth * ratio
-    const height = window.innerHeight * ratio
-    canvas.width = width
-    canvas.height = height
+    const width = window.innerWidth
+    const height = window.innerHeight
     renderer.setSize(width, height);
     renderer.setPixelRatio(ratio)
     camera.aspect = width / height
+    camera.position.z = 5
   }
   size()
   window.addEventListener('resize', size, false)
