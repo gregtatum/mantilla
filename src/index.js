@@ -5,12 +5,12 @@ const setupParametric = require('./parametric')
 
 ;(function() {
   const app = setupApp()
-  app.sound = setupSound(app)
+  // app.sound = setupSound(app)
   app.sky = setupSky(app)
   app.parametric = setupParametric(app)
 
   ;(function loop() {
-    app.sound.update()
+    // app.sound.update()
     app.sky.update()
     app.parametric.update()
 
