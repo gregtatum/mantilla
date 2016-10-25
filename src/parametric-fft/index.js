@@ -45,7 +45,7 @@ const updater = (app, mesh) => {
 
 function createMesh (config) {
   const [w, h] = config.segments;
-  return new Mesh(
+  const mesh = new Mesh(
     new PlaneBufferGeometry(config.size, config.size, w, h),
     new ShaderMaterial({
     	uniforms: {
@@ -54,7 +54,10 @@ function createMesh (config) {
     	},
       wireframe: true,
     	vertexShader,
-    	fragmentShader
+    	fragmentShader,
+      depthTest: false
     })
   )
+  mesh.frustumCulled = false
+  return mesh
 }

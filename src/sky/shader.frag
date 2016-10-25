@@ -4,6 +4,7 @@ precision mediump float;
 
 uniform float aspect;
 uniform float time;
+uniform float kickDrum;
 
 varying vec2 vUv;
 
@@ -36,8 +37,8 @@ void main() {
   );
 
   vec2 position = vec2(
-    vUv - vec2(CENTER_X + noise, CENTER_Y)
-  ) * GRADIENT_DISTANCE;
+    vUv - vec2(CENTER_X + noise * mix(0.0, 1.0, kickDrum), CENTER_Y)
+  ) * GRADIENT_DISTANCE * mix(0.25, 1.5, kickDrum);
 
   position.x *= aspect * ASPECT_RATIO;
 

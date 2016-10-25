@@ -28,10 +28,24 @@ function setupResizeHandler(canvas, renderer, camera) {
     const ratio = window.devicePixelRatio
     const width = window.innerWidth
     const height = window.innerHeight
+    console.log(width, height)
     renderer.setSize(width, height);
     renderer.setPixelRatio(ratio)
     camera.aspect = width / height
     camera.position.z = 5
+
+    // Fiddle with the FOV a bit for different sizes
+    const targetFOV = 50
+    const ratioBreakPoint = 1.5
+    camera.fov = targetFOV
+    if (width / height > ratioBreakPoint) {
+      camera.fov = targetFOV * ratioBreakPoint * height / width
+    }
+    if (height / width > ratioBreakPoint) {
+      camera.fov = targetFOV * ratioBreakPoint * width / height * 2
+    }
+
+    camera.updateProjectionMatrix()
   }
   size()
   window.addEventListener('resize', size, false)

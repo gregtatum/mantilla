@@ -17,7 +17,7 @@ void main() {
 	float vT = v * TAU;
 
 	float noiseScale = mix(8.0, 10.0, snoise2(vec2(0.0, time * 0.5)));
-	float noiseAmplitude = mix(0.5, 2.0, snoise3(vec3(u, v, time)));
+	float noiseAmplitude = mix(1.5, 2.0, snoise3(vec3(u, v, time)));
 	float noise = 0.05 * snoise3(vec3(
 		u * noiseScale,
 		v * noiseScale,

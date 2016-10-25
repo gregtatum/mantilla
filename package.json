@@ -12,9 +12,11 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "analyser-frequency-average": "1.0.0",
     "brfs": "1.4.3",
     "browserify": "13.1.0",
     "co": "4.6.0",
+    "geo-3d-box": "2.0.2",
     "glsl-blend-soft-light": "^1.0.5",
     "glsl-film-grain": "^1.0.2",
     "glsl-hsl2rgb": "1.1.0",

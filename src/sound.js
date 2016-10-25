@@ -10,7 +10,7 @@ module.exports = function setupSoundcloud(app) {
   SoundcloudBadge({
     client_id: '6057c9af862bf245d4c402179e317f52',
     // song: 'https://soundcloud.com/synaptyx/melancholia',
-    song: 'https://soundcloud.com/synaptyx/3086-10-power-13',
+    song: 'https://soundcloud.com/synaptyx/thought-crime',
     dark: false,
     getFonts: true,
   }, function(err, src, data, div) {
@@ -23,12 +23,12 @@ module.exports = function setupSoundcloud(app) {
     audio.src = src
     audio.loop = true
     audio.addEventListener('canplay', () => {
-      const analyser = analyse(audio, { audible: true, stereo: false })
-      analyser.analyser.fftSize = 32;
+
+      sound.analyserUtil = analyse(audio, { audible: true, stereo: false })
       audio.play()
-      sound.update = () => {
-        sound.waveform = analyser.waveform()
-      }
+      // sound.update = () => {
+      //   sound.frequencies = sound.analyserUtil.frequencies()
+      // }
     })
   })
 
