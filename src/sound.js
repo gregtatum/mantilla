@@ -15,7 +15,8 @@ module.exports = function setupSoundcloud(app) {
     getFonts: true,
   }, function(err, src, data, div) {
     if (err) {
-      return reject(err)
+      console.error(err)
+      return
     }
 
     var audio = new Audio

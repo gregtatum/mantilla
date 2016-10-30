@@ -28,7 +28,6 @@ function setupResizeHandler(canvas, renderer, camera) {
     const ratio = window.devicePixelRatio
     const width = window.innerWidth
     const height = window.innerHeight
-    console.log(width, height)
     renderer.setSize(width, height);
     renderer.setPixelRatio(ratio)
     camera.aspect = width / height
