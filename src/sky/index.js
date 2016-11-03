@@ -56,7 +56,7 @@ function createMesh () {
         smooth: { type: 'v2', value: new Vector2(0.0, 1.0) },
         kickDrum: { value: 0.5 },
       },
-      depthTest: false
+      depthTest: true
     })
   )
 }

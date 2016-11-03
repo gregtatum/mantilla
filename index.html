@@ -4,13 +4,16 @@
     <meta charset="utf-8">
     <title>Odezsa</title>
     <link rel="stylesheet" href="style.css" charset="utf-8">
+    <!-- This is inline so that it loads before the bundle -->
     <style>
       body {
-        background: #41434C;
+        font-family: sans-serif;
+        background-color: hsl(7, 51%, 51%);
       }
     </style>
   </head>
   <body>
+    <script src='./src/loader-screen/index.js'></script>
     <script src="bundle.js"></script>
   </body>
 </html>

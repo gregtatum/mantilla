@@ -10,7 +10,7 @@ const {
 
 module.exports = function makeParametric(app) {
   const config = {
-    meshSize: 3,
+    meshSize: 1,
     size: 1,
     segments: [16, 16]
   }
@@ -18,6 +18,7 @@ module.exports = function makeParametric(app) {
   const {scene} = app
   const mesh = createMesh(config)
   mesh.scale.multiplyScalar(config.meshSize)
+  mesh.position.z = 2.5
   scene.add(mesh)
 
   return { mesh, update: updater(mesh) }

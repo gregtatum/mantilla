@@ -12,6 +12,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@tatumcreative/random": "1.1.3",
     "analyser-frequency-average": "1.0.0",
     "brfs": "1.4.3",
     "browserify": "13.1.0",
